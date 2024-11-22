@@ -7,34 +7,21 @@ import Cart from './components/Cart';
 
 
 function App() {
-  //För sökfrågan
-  const [searchQuery, setSearchQuery] = useState('');
-  //För alla produkter
-  const [products, setProducts] = useState([]);
+
   //För filtrerade produkter baserat på sökfrågan
   const [filteredProducts, setFilteredProducts] = useState([]);
   //För produkter i varukorgen
   const [cartItems, setCartItems] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('https://dummyjson.com/products')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setProducts(data.products);
-  //       console.log(data.products)
-  //       // setFilteredProducts(data.products)
-  //     });
-  // }, []);
 
-  // Funktion för att hantera sökfrågeändringar
+  // Funktion för att hantera sökfrågan
   const handleSearch = (inputValue) => {
 
     fetch(`https://dummyjson.com/products/search?q=${inputValue}`)
       .then((response) => response.json())
       .then((data) => {
-        setFilteredProducts(data.products); // Uppdatera med de filtrerade produkterna
+        setFilteredProducts(data.products);
       })
-    // setFilteredProducts(filtered);
 
   };
 

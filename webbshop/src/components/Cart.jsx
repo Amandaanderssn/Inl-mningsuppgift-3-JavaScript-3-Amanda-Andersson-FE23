@@ -2,6 +2,7 @@
 
 function Cart({ cart, handleRemoveFromCart }) {
 
+    //Räknar ihop det totala priset på alla varor i varukorgen
     const totalCartPrice = cart.reduce((total, product) => total + (product.price * product.quantity), 0)
 
     return (

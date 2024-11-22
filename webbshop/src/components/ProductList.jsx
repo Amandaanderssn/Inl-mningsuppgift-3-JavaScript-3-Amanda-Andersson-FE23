@@ -1,5 +1,3 @@
-// import { useEffect, useState } from "react";
-
 import { useState } from "react";
 
 
@@ -31,7 +29,6 @@ const ProductList = ({ products, handleAddToCart }) => {
                                 </div>
                                 <div>
                                     <p>{product.price} $</p>
-                                    {/* Gör komponent av knappen */}
                                     <button onClick={() => handleAddToCart(product)}>Add to cart</button>
                                 </div>
                             </div>
