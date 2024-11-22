@@ -1,0 +1,105 @@
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+.App {
+  margin: 1rem;
+}
+
+header {
+  text-align: center;
+}
+
+header>form>input {
+  width: 60%;
+  padding: 0.5rem;
+}
+
+header>form>button {
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+main {
+  display: flex;
+}
+
+section {
+  width: 70%;
+}
+
+aside {
+  width: 40%;
+}
+
+.wrapProducts {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 15rem;
+  border: 1px solid grey;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.productCard>img {
+  height: 150px;
+}
+
+.productCard>div>p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.productCard>div {
+  margin-bottom: 1rem;
+}
+
+.productCard:hover {
+  cursor: pointer;
+}
+
+.MoreInformationModal {
+  border: 1px solid grey;
+  background-color: white;
+  position: fixed;
+  top: 15rem;
+
+  width: 87.5%;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+
+
+.ProductInCart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid grey;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.ProductInCart>img {
+  width: 70px;
+}
+
+.productInfo {
+  text-align: center;
+  width: 10rem;
+}
+
+.ProductInCart>div>p {
+  margin: 0.5rem;
+}
