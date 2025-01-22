@@ -69,14 +69,20 @@ aside {
 }
 
 .MoreInformationModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   border: 1px solid grey;
   background-color: white;
   position: fixed;
-  top: 15rem;
+  top: 11rem;
 
-  width: 87.5%;
+  width: 25rem;
+  height: 20rem;
   text-align: center;
   padding: 1.5rem;
+  background-color: rgb(205, 205, 205);
 }
 
 

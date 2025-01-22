@@ -3,14 +3,17 @@ import { useState } from "react";
 
 const ProductList = ({ products, handleAddToCart }) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [selectedProductId, setSelectedProductId] = useState(null)
 
-    const OpenMoreInformationModal = (event) => {
-        event.preventDefault();
+    const handleOpenModal = (productId) => {
+        // event.preventDefault();
+        setSelectedProductId(productId)
         setIsModalVisible(true)
     }
 
-    const CloseMoreInformationModal = () => {
+    const handleCloseModal = () => {
         setIsModalVisible(false);
+        setSelectedProductId(null)
     }
 
     return (
@@ -25,23 +28,29 @@ const ProductList = ({ products, handleAddToCart }) => {
                                 <img src={product.images[0]} alt={product.title}></img>
                                 <div>
                                     <p>{product.title}</p>
-                                    <a href="#" onClick={OpenMoreInformationModal}>More info</a>
+                                    <a href="#" onClick={() => handleOpenModal(product.id)}>More info</a>
                                 </div>
                                 <div>
                                     <p>{product.price} $</p>
                                     <button onClick={() => handleAddToCart(product)}>Add to cart</button>
                                 </div>
                             </div>
-                            {isModalVisible && (
-                                <div className="MoreInformationModal">
-                                    <p>Description:</p>
-                                    <p>{product.description}</p>
-                                    <button onClick={CloseMoreInformationModal}>X</button>
-                                </div>
-                            )}
                         </div>
-
                     ))}
+                    {isModalVisible && (
+                        <div className="MoreInformationModal">
+                            {products
+                                .filter(product => product.id === selectedProductId)
+                                .map(product => (
+                                    <div key={product.id}>
+
+                                        <p>Description for <b>{product.title}</b>:</p>
+                                        <p>{product.description}</p>
+                                    </div>
+                                ))}
+                            <button onClick={() => handleCloseModal(selectedProductId)}>X</button>
+                        </div>
+                    )}
                 </div>
             ) : (
                 <p>No products found</p>
